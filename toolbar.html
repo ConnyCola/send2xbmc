@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>	
+
+<p id="demo"></p>
+
+
+	<script>
+	
+		
+	var youtubeID = "4feOL_1dtqI"
+	var clearJSON = "%7B%22jsonrpc%22%3A%222.0%22%2C%22method%22%3A%22Playlist.Clear%22%2C%22params%22%3A%7B%22playlistid%22%3A1%7D%2C%22id%22%3A1%7D";
+	var playJSON = "%7B%22jsonrpc%22%3A%222.0%22%2C%22method%22%3A%22Player.Open%22%2C%22params%22%3A%7B%22item%22%3A%7B%22playlistid%22%3A1%7D%7D%2C%22id%22%3A1%7D%0A";
+	
+	var add1JSON = "%7B%22jsonrpc%22%3A%222.0%22%2C%22method%22%3A%22Playlist.Add%22%2C%22params%22%3A%7B%22playlistid%22%3A1%2C%22item%22%3A%7B%22file%22%3A%22plugin%3A%2F%2Fplugin.video.youtube%2F%3Faction%3Dplay_video%26videoid%3D";
+	var add2JSON = "%22%7D%7D%2C%22id%22%3A1%7D";
+	
+	var URLhead = "http://192.168.178.22/jsonrpc?request=";
+	var clearBTN = URLhead + clearJSON;
+	var playBTN  = URLhead + playJSON;
+	
+	var addBTN   = URLhead + add1JSON + encodeURIComponent(youtubeID) + add2JSON;
+	
+	var btn1 = "  Clear  ";
+	var btn2 = "  ADD  ";
+	var btn3 = "  Play  ";
+
+	var myurl = safari.application.activeBrowserWindow.activeTab.url;
+	var myactab = safari.application.activeBrowserWindow.activeTab.url;
+	
+
+	var result = btn1.link(clearBTN) + btn2.link(addBTN) + btn3.link(playBTN);
+	document.getElementById("demo").innerHTML = result;
+	
+	</script>
+	
+	
+</body>
+</html>
