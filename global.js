@@ -28,14 +28,16 @@ var sendData = function(event) {
 	
 	if(parseVideoID(url))
 		return;
+
+	//send to XBMC
 	
 	//sendJSON("clear");
 	//sendJSON("add");
 	//sendJSON("play");
 	
 	//sendJSON("test");
-	
-	//send to XBMC
+
+	sendJSON("clear");
 	sendJSON("open");
 	
 	//File start.js
@@ -70,7 +72,7 @@ var sendJSON = function(com) {
 	if(com === "clear")
 		endpoint += clearJSON;
 	else if(com === "add")
-		endpoint += add11JSON + youtubeVidID + add12JSON;
+		endpoint += add1JSON + youtubeVidID + add2JSON;
 	else if(com === "play")
 		endpoint += playJSON;
 	else if(com === "test")
