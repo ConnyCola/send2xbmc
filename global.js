@@ -52,6 +52,16 @@ var parseVideoID = function(urlstring) {
 		return 1;
 	
 	var urlSub = urlstring.substring(32,urlstring.length);
+
+
+	urlYT = urlSub.search("=");
+	if(urlYT >= 3)
+		urlSub = urlSub.substring(0,urlYT);	//if there is a = after the Video id
+
+	urlYT = urlSub.search("&");
+	if(urlYT >= 3)
+		urlSub = urlSub.substring(0,urlYT);	//if there is a & after the Video id
+
 	console.log(urlSub);
 	
 	youtubeVidID = urlSub;
